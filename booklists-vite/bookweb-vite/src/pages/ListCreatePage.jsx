@@ -69,12 +69,13 @@ function ListCreatePage() {
         try {
             const listResponse = await axios.post("http://localhost:8800/lists", card);
             const listId = listResponse.data.listId
-            console.log(listId)
+            console.log(listItems)
             for (const item of listItems) {
                 await axios.post("http://localhost:8800/books", {
                     list_id: listId,
                     book_title: item.title,
-                    book_author: item.authors
+                    book_author: item.authors,
+                    book_cover: item.imageLinks?.thumbnail
                 })
             }
             // navigate("/fantasy")

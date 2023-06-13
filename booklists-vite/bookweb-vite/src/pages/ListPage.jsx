@@ -40,7 +40,7 @@ function ListPage() {
 
     return (
         <Container fluid>
-            <h1>{list[0]?.list_title}</h1>
+            <h1 className='title'>{list[0]?.list_title}</h1>
             {books?.map((book) => (
               <h1>{book.book_title}</h1>
             ))}
