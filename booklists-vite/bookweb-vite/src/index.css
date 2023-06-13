@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.title {
+  text-align: center;
+}
+
+.Stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-gap: 3rem;
+  justify-items: center;
+}
+
+.register-link {
+  text-decoration: none;
+}
+
+.navbar-brand {
+  font-size: 100px;
+}
+
+.login-form {
+  padding: 30px;
+  outline-color: black;
+  outline-style: solid;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0);
+}
+
+.post-row {
+  position: relative;
+  left: 2%;
+}
+
+.title-label, .description-label{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.genre-label {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.search-book-label {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.book-name {
+  position: relative;
+  right: 40%;
+}
+
+.list-form {
+  margin-bottom: 100px;
+}
+
+.move-up-btn {
+  display: none !important;
+}
+
+.dlt-btn {
+  display: none !important;
+}
+
+.move-down-btn {
+  display: none !important;
+}
+
+.list-item:hover .move-up-btn{
+  display: block !important;
+}
+
+.list-item:hover .move-down-btn{
+  display: block !important;
+}
+
+.list-item:hover .dlt-btn{
+  display: block !important;
+}
+
