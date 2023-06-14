@@ -19,7 +19,7 @@ function GenrePage({header}) {
     }
     fetchLists()
   }, [])
-  
+
 
   return (
     <Container fluid>

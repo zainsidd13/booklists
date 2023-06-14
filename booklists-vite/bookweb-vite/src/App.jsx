@@ -17,6 +17,9 @@ function App() {
           <Route path="/fantasy" element={<GenrePage header="Fantasy"/>} />
           <Route path="/mystery" element={<GenrePage header="Mystery" />} />
           <Route path="/romance" element={<GenrePage header="Romance" />} />
+          <Route path="/young-adult" element={<GenrePage header="Young-Adult"/>} />
+          <Route path="/nonfiction" element={<GenrePage header="Non-Fiction" />} />
+          <Route path="/childrens" element={<GenrePage header="Childrens" />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/makelist" element={<ListCreatePage />} />
           <Route path='/practice' element={<BookSearch />} />

@@ -135,30 +135,30 @@ function ListCreatePage() {
                     <Stack direction='vertical'>
                         <Form.Label className='genre-label'>Select genres for your list:</Form.Label>
                         <ToggleButtonGroup type="checkbox" className='' value={selectedOptions} onChange={handleOptionChange}>
-                            <ToggleButton id="Fantasy" value="Fantasy">
+                            <ToggleButton id="Fantasy" value="fantasy">
                                 Fantasy
                             </ToggleButton>
-                            <ToggleButton id="Mystery" value="Mystery">
+                            <ToggleButton id="Mystery" value="mystery">
                                 Mystery
                             </ToggleButton>
-                            <ToggleButton id="Young Adult" value="Young Adult">
+                            <ToggleButton id="Young Adult" value="young-adult">
                                 Young-Adult
                             </ToggleButton>
-                            <ToggleButton id="Thriller" value="Thriller">
+                            <ToggleButton id="Thriller" value="thriller">
                                 Thriller
                             </ToggleButton>
                         </ToggleButtonGroup>
                         <ToggleButtonGroup type="checkbox" className='mt-4' value={selectedOptions} onChange={handleOptionChange}>
-                            <ToggleButton id="Non-Fiction" value="Non-Fiction">
+                            <ToggleButton id="Non-Fiction" value="nonfiction">
                                 Non-Fiction
                             </ToggleButton>
-                            <ToggleButton id="Romance" value="Romance">
+                            <ToggleButton id="Romance" value="romance">
                                 Romance
                             </ToggleButton>
-                            <ToggleButton id="Contemp Fiction" value="Contemp Fiction">
+                            <ToggleButton id="Contemp Fiction" value="contemp-fiction">
                                 Contemp-Fiction
                             </ToggleButton>
-                            <ToggleButton id="Childrens" value="Childrens">
+                            <ToggleButton id="Childrens" value="childrens">
                                 Childrens
                             </ToggleButton>
                         </ToggleButtonGroup>

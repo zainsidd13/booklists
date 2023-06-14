@@ -85,7 +85,8 @@ app.get("/books/:id", (req, res) => {
   });
 
 // Lists with specific id
-app.get("/lists/:id", (req, res) => {
+
+app.get("/lists/:id(\\d+)", (req, res) => {
     const id = req.params.id;
     const query = "SELECT * FROM Lists WHERE id = ?";
     db.query(query, [id], (err, data) => {
@@ -93,6 +94,16 @@ app.get("/lists/:id", (req, res) => {
       return res.json(data);
     });
   });
+
+app.get("/lists/:genre", (req, res) => {
+    const genre = req.params.genre;
+    const query = "SELECT * FROM Lists WHERE genre_id LIKE ?";
+    db.query(query, [`%${genre}%`], (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    });
+});
+
 
 
 app.listen(8800, () => {

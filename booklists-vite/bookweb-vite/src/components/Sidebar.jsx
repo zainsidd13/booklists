@@ -28,7 +28,7 @@ function Sidebar() {
               <Button href="/romance" variant="outline-secondary">Romance</Button>
             </Nav.Item>
             <Nav.Item style={{height: "3vh"}}>
-              <Button href="/youngadult" variant="outline-secondary">Young Adult</Button>
+              <Button href="/young-adult" variant="outline-secondary">Young Adult</Button>
             </Nav.Item>
             <Nav.Item style={{height: "3vh"}}>
               <Button href="/nonfiction" variant="outline-secondary">Non-fiction</Button>
