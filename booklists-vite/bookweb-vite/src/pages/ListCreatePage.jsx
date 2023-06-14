@@ -158,20 +158,6 @@ function ListCreatePage() {
                     </Stack>
                 </Form.Group>
 
-                {/* <Form.Group controlId='listGenres' className='mt-5'>
-                    <Form.Label className='genre-label'>Select genres for your list:</Form.Label>
-                    <Row lg={4} md={3} sm={3}>
-                        <CheckBox genre="Fantasy" />
-                        <CheckBox genre="Mystery" />
-                        <CheckBox genre="Romance" />
-                        <CheckBox genre="Sci-Fi" />
-                        <CheckBox genre="Thriller" />
-                        <CheckBox genre="Historical" />
-                        <CheckBox genre="Dystopian" />
-                        
-                    </Row>
-                </Form.Group> */}
-
                 {/* Add Books */}
                 {/* Searches books and lets you select them to add */}
                 <BookSearch parentHandle={handleSelect}/>
