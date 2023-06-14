@@ -21,21 +21,6 @@ function GenrePage({header}) {
     fetchLists()
   }, [])
 
-  // useEffect(() => {
-  //   const fetchLists = () => {
-  //     try {
-  //       axios.get("http://localhost:8800/lists")
-  //       .then(response => {setLists(response.data)})
-  //       console.log(lists);
-
-  //     } catch(err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   fetchLists()
-  // }, [])
-
-
   return (
     <Container fluid>
       <h1 className='title'>{header}</h1>
