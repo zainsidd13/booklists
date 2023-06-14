@@ -1,4 +1,4 @@
-import { Form, Container, Row, Button, Stack } from 'react-bootstrap';
+import { Form, Container, Row, Button, Stack, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import { useState } from 'react';
 import BookSearch from '../components/BookSearch';
 import CheckBox from '../components/CheckBox';
@@ -123,7 +123,42 @@ function ListCreatePage() {
                 </Form.Group>
 
                 {/* Genres */}
+
                 <Form.Group controlId='listGenres' className='mt-5'>
+                    <Stack direction='vertical'>
+                        <Form.Label className='genre-label'>Select genres for your list:</Form.Label>
+                        <ToggleButtonGroup type="checkbox" className=''>
+                            <ToggleButton id="option1" value="option1">
+                                Fantasy
+                            </ToggleButton>
+                            <ToggleButton id="option2" value="option2">
+                                Mystery
+                            </ToggleButton>
+                            <ToggleButton id="option3" value="option3">
+                                Young Adult
+                            </ToggleButton>
+                            <ToggleButton id="option4" value="option4">
+                                Thriller
+                            </ToggleButton>
+                        </ToggleButtonGroup>
+                        <ToggleButtonGroup type="checkbox" className='mt-4'>
+                            <ToggleButton id="option5" value="option5">
+                                Non-Fiction
+                            </ToggleButton>
+                            <ToggleButton id="option6" value="option6">
+                                Romance
+                            </ToggleButton>
+                            <ToggleButton id="option7" value="option7">
+                                Contemp Fiction
+                            </ToggleButton>
+                            <ToggleButton id="option8" value="option8">
+                                Childrens
+                            </ToggleButton>
+                        </ToggleButtonGroup>
+                    </Stack>
+                </Form.Group>
+
+                {/* <Form.Group controlId='listGenres' className='mt-5'>
                     <Form.Label className='genre-label'>Select genres for your list:</Form.Label>
                     <Row lg={4} md={3} sm={3}>
                         <CheckBox genre="Fantasy" />
@@ -135,7 +170,7 @@ function ListCreatePage() {
                         <CheckBox genre="Dystopian" />
                         
                     </Row>
-                </Form.Group>
+                </Form.Group> */}
 
                 {/* Add Books */}
                 {/* Searches books and lets you select them to add */}
