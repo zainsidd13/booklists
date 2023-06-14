@@ -7,11 +7,12 @@ function GenrePage({header}) {
   const [lists, setLists] = useState([])
 
   useEffect(() => {
-    const fetchLists = () => {
+    const fetchLists = async () => {
       try {
-        axios.get("http://localhost:8800/lists")
-        .then(response => {setLists(response.data)})
-        console.log(lists);
+        const list_url = "http://localhost:8800/lists/" + header;
+        const response = await axios.get(list_url);
+        setLists(response.data);
+        console.log(list_url);
 
       } catch(err) {
         console.log(err)
@@ -19,6 +20,20 @@ function GenrePage({header}) {
     }
     fetchLists()
   }, [])
+
+  // useEffect(() => {
+  //   const fetchLists = () => {
+  //     try {
+  //       axios.get("http://localhost:8800/lists")
+  //       .then(response => {setLists(response.data)})
+  //       console.log(lists);
+
+  //     } catch(err) {
+  //       console.log(err)
+  //     }
+  //   }
+  //   fetchLists()
+  // }, [])
 
 
   return (
