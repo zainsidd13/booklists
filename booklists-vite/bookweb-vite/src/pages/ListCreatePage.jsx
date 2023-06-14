@@ -70,15 +70,31 @@ function ListCreatePage() {
             const listResponse = await axios.post("http://localhost:8800/lists", card);
             const listId = listResponse.data.listId
             console.log(listItems)
+
+            const booksData = []; // Initialize the booksData array here
+
             for (const item of listItems) {
-                await axios.post("http://localhost:8800/books", {
-                    list_id: listId,
-                    book_title: item.title,
-                    book_author: item.authors,
-                    book_cover: item.imageLinks?.thumbnail
-                })
+            booksData.push({
+                book_title: item.title,
+                book_author: item.authors,
+                book_cover: item.imageLinks?.thumbnail
+            });
             }
-            // navigate("/fantasy")
+
+            await axios.post("http://localhost:8800/books", {
+            list_id: listId,
+            booksData: booksData,
+            });
+            
+            // for (const item of listItems) {
+            //     await axios.post("http://localhost:8800/books", {
+            //         list_id: listId,
+            //         book_title: item.title,
+            //         book_author: item.authors,
+            //         book_cover: item.imageLinks?.thumbnail
+            //     })
+            // }
+            navigate("/fantasy")
     
           } catch(err) {
             console.log(err)

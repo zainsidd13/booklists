@@ -9,12 +9,12 @@ function ListPage() {
     const [list, setList] = useState([]);
 
     useEffect(() => {
-        const fetchLists = () => {
+        const fetchLists = async () => {
           try {
-            const list_url = "http://localhost:8800/lists/" + argument
-            axios.get(list_url)
-            .then(response => {setList(response.data)})
-            console.log(list[0].list_title);
+            const list_url = "http://localhost:8800/lists/" + argument;
+            const response = await axios.get(list_url);
+            setList(response.data);
+            console.log(response.data[0]?.list_title);
     
           } catch(err) {
             console.log(err)
@@ -24,12 +24,12 @@ function ListPage() {
       }, [])
 
     useEffect(() => {
-        const fetchBooks = () => {
+        const fetchBooks = async () => {
           try {
-            const book_url = "http://localhost:8800/books/" + argument 
-            axios.get(book_url)
-            .then(response => {setBooks(response.data)})
-            console.log(books);
+            const book_url = "http://localhost:8800/books/" + argument;
+            const response = await axios.get(book_url);
+            setBooks(response.data);
+            console.log(response.data);
     
           } catch(err) {
             console.log(err)
@@ -38,14 +38,16 @@ function ListPage() {
         fetchBooks()
       }, [])
 
+
+
     return (
         <Container fluid>
             <h1 className='title'>{list[0]?.list_title}</h1>
-            <p className='d-flex justify-content-center'>{list[0].desc}</p>
+            <p className='d-flex justify-content-center'>{list[0]?.desc}</p>
 
           <div className=''>
             {books?.map((book, index) => (
-              <Stack gap={3} direction='horizontal' className='mt-5 d-flex justify-content-center'>
+              <Stack key={index} gap={3} direction='horizontal' className='mt-5 d-flex justify-content-center'>
                                    
                 <Stack gap={2} direction='horizontal' style={{display: 'flex'}}>
                     <p style={{alignSelf: 'flex-start'}}>{index+1}.</p>

@@ -54,14 +54,25 @@ app.get("/books", (req, res) => {
 })
 
 app.post("/books", (req, res) => {
-    const q = "INSERT INTO Books (`list_id`, `book_title`, `book_author`, `book_cover`) VALUES (?)"
-    const values = [req.body.list_id, req.body.book_title, req.body.book_author, req.body.book_cover]
+    const booksData = req.body.booksData; // Assuming booksData is an array of book objects
+    
+    const values = booksData.map(book => [req.body.list_id, book.book_title, book.book_author, book.book_cover]);
+    const q = "INSERT INTO Books (`list_id`, `book_title`, `book_author`, `book_cover`) VALUES ?";
 
     db.query(q, [values], (err, data) => {
-        if (err) return res.json(err)
-        return res.json("List added")
-    })
-})
+        if (err) return res.json(err);
+        return res.json("Books added");
+    });
+});
+// app.post("/books", (req, res) => {
+//     const q = "INSERT INTO Books (`list_id`, `book_title`, `book_author`, `book_cover`) VALUES (?)"
+//     const values = [req.body.list_id, req.body.book_title, req.body.book_author, req.body.book_cover]
+
+//     db.query(q, [values], (err, data) => {
+//         if (err) return res.json(err)
+//         return res.json("List added")
+//     })
+// })
 
 // books with specific id
 app.get("/books/:id", (req, res) => {
