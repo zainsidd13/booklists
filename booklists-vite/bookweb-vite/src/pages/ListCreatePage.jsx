@@ -11,6 +11,8 @@ function ListCreatePage() {
     const [listTitle, setListTitle] = useState("");
     const [description, setDescription] = useState("");
     const navigate = useNavigate();
+    const [selectedOptions, setSelectedOptions] = useState([]); // For genre button options
+    const [genresString, setGenresString] = useState("");
 
     const handleTitleChange = (inputValue) => {
         setListTitle(inputValue);
@@ -48,7 +50,7 @@ function ListCreatePage() {
     const handleDelete = (index) => {
         const tempList = [...listItems];
         tempList.splice(index,1);
- 
+        
         setListItems(tempList);
         
     }
@@ -58,11 +60,16 @@ function ListCreatePage() {
         setListItems([...listItems, book]);
     }
 
+    const handleOptionChange = (selected) => {
+        setSelectedOptions(selected);
+        setGenresString(selected.join(","));
+      };
+    
 
     const handleSubmit = async () => {
         const card = {
             list_title: listTitle,
-            genre_id: "genre from react",
+            genre_id: genresString,
             desc: description,
             cover: listItems[0].imageLinks?.thumbnail
         }
@@ -127,31 +134,31 @@ function ListCreatePage() {
                 <Form.Group controlId='listGenres' className='mt-5'>
                     <Stack direction='vertical'>
                         <Form.Label className='genre-label'>Select genres for your list:</Form.Label>
-                        <ToggleButtonGroup type="checkbox" className=''>
-                            <ToggleButton id="option1" value="option1">
+                        <ToggleButtonGroup type="checkbox" className='' value={selectedOptions} onChange={handleOptionChange}>
+                            <ToggleButton id="Fantasy" value="Fantasy">
                                 Fantasy
                             </ToggleButton>
-                            <ToggleButton id="option2" value="option2">
+                            <ToggleButton id="Mystery" value="Mystery">
                                 Mystery
                             </ToggleButton>
-                            <ToggleButton id="option3" value="option3">
-                                Young Adult
+                            <ToggleButton id="Young Adult" value="Young Adult">
+                                Young-Adult
                             </ToggleButton>
-                            <ToggleButton id="option4" value="option4">
+                            <ToggleButton id="Thriller" value="Thriller">
                                 Thriller
                             </ToggleButton>
                         </ToggleButtonGroup>
-                        <ToggleButtonGroup type="checkbox" className='mt-4'>
-                            <ToggleButton id="option5" value="option5">
+                        <ToggleButtonGroup type="checkbox" className='mt-4' value={selectedOptions} onChange={handleOptionChange}>
+                            <ToggleButton id="Non-Fiction" value="Non-Fiction">
                                 Non-Fiction
                             </ToggleButton>
-                            <ToggleButton id="option6" value="option6">
+                            <ToggleButton id="Romance" value="Romance">
                                 Romance
                             </ToggleButton>
-                            <ToggleButton id="option7" value="option7">
-                                Contemp Fiction
+                            <ToggleButton id="Contemp Fiction" value="Contemp Fiction">
+                                Contemp-Fiction
                             </ToggleButton>
-                            <ToggleButton id="option8" value="option8">
+                            <ToggleButton id="Childrens" value="Childrens">
                                 Childrens
                             </ToggleButton>
                         </ToggleButtonGroup>
