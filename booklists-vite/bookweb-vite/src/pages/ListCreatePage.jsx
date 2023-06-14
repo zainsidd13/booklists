@@ -93,14 +93,6 @@ function ListCreatePage() {
             booksData: booksData,
             });
             
-            // for (const item of listItems) {
-            //     await axios.post("http://localhost:8800/books", {
-            //         list_id: listId,
-            //         book_title: item.title,
-            //         book_author: item.authors,
-            //         book_cover: item.imageLinks?.thumbnail
-            //     })
-            // }
             navigate("/fantasy")
     
           } catch(err) {
@@ -221,3 +213,13 @@ export default ListCreatePage;
 
 
 
+
+
+// for (const item of listItems) {
+            //     await axios.post("http://localhost:8800/books", {
+            //         list_id: listId,
+            //         book_title: item.title,
+            //         book_author: item.authors,
+            //         book_cover: item.imageLinks?.thumbnail
+            //     })
+            // }

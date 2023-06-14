@@ -12,7 +12,6 @@ function GenrePage({header}) {
         const list_url = "http://localhost:8800/lists/" + header;
         const response = await axios.get(list_url);
         setLists(response.data);
-        console.log(list_url);
 
       } catch(err) {
         console.log(err)
