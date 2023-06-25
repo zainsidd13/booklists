@@ -6,6 +6,7 @@ import RegisterPage from './pages/RegisterPage';
 import ListCreatePage from './pages/ListCreatePage';
 import BookSearch from './components/BookSearch';
 import ListPage from './pages/ListPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Sidebar />
       <BrowserRouter>
         <Routes>
+        <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/fantasy" element={<GenrePage header="Fantasy"/>} />
           <Route path="/mystery" element={<GenrePage header="Mystery" />} />
