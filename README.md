@@ -14,7 +14,7 @@ BookLists is a web application developed using **React + Vite**, **Node.js** wit
 * **React Router Dom**: Enabled smooth navigation within the application.
 * **Bootstrap**: Improved responsiveness and device compatibility.
 
-I am currently working on adding user authentication and polishing the frontend design. Once completed, the application will be deployed to Google's Firebase cloud server for scalability.
+I am currently working on polishing the front end. Once completed, the application will be deployed to Google's Firebase cloud server for scalability.
 
 When browsing through my code, keep in mind that there are still plenty of optimization techniques I plan to implement!
 
