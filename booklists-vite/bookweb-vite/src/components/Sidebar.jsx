@@ -32,6 +32,15 @@ function Sidebar() {
               <Nav.Item style={{height: "3vh"}}>
                 <Button href="/nonfiction" variant="outline-secondary">Non-fiction</Button>
               </Nav.Item>
+              {/* <Nav.Link style={{height: "1vh"}} className="d-flex">
+                <p href="/makelist" variant="outline-secondary" >Create a List</p>
+              </Nav.Link> */}
+
+            <Nav className="ml-auto flex-column create-list-button">
+              <Nav.Item style={{ height: "4vh" }}>
+                <Nav.Link href="/makelist" variant="outline-secondary">Make a List</Nav.Link>
+              </Nav.Item>
+            </Nav>
 
           {/* Offcanvas menu */}
           </Stack>

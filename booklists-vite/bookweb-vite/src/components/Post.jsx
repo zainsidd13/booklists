@@ -15,7 +15,7 @@ function Post({title, description, cover, id}) {
           <Card.Text>
             {description}
           </Card.Text>
-          <Button variant="primary" href={url}>Go somewhere</Button>
+          <Button variant="primary" href={url}>View</Button>
         </Card.Body>
       </Card>
     </Col>

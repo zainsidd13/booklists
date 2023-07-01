@@ -125,7 +125,7 @@ code {
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 925px) {
   .navigation-items .nav-item {
     display: none;
   }
